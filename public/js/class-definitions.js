@@ -333,7 +333,17 @@ var gender = {
  * @return {Bool when False, String when True}
  *
  */
+ function drink(type){
+    if(beers[type] === undefined){
+      return false;
+    }
 
+    if( beers[type] instanceof Array){
+      return "This " + type + " is " + beers[type][0] + " and " + beers[type][1] +".";
+    } else {
+      return "This " + type  + " is " + beers[type] + ".";
+    }
+ }
 
 /* Step 24
  *
@@ -347,6 +357,14 @@ var gender = {
  *
  */
 
+ function browseURL(url){
+  if(browsers[url] === undefined){
+    return false;
+  } else {
+    return browsers[url];
+  }
+
+ }
 
 /* Step 25
  *
@@ -357,7 +375,16 @@ var gender = {
  * @return {String}
  *
  */
-
+ function listLivingOrgClass(){
+  var ul = document.createElement('ul');
+  var li;
+  console.log(livingOrganismClassification);
+  for (var i = 0; i < livingOrganismClassification.length; i++) {
+    li = document.createElement('li');
+    li.innerHTML = livingOrganismClassification[i];
+    ul.appendChild(li);
+  }
+ }
 
 /* Step 26
  *
@@ -378,6 +405,12 @@ var gender = {
  * @return {String}
  *
  */
+
+ function favoritePlanet(planet){
+  if(planets.indexOf(planet) === -1){
+    return "/" +planet + "is not a planet!/";
+  }
+ }
 
 
 /* Step 27
