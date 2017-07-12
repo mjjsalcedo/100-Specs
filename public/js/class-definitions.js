@@ -376,14 +376,15 @@ var gender = {
  *
  */
  function listLivingOrgClass(){
-  var ul = document.createElement('ul');
   var li;
-  console.log(livingOrganismClassification);
+
   for (var i = 0; i < livingOrganismClassification.length; i++) {
-    li = document.createElement('li');
-    li.innerHTML = livingOrganismClassification[i];
-    ul.appendChild(li);
+    li += '<li>' + livingOrganismClassification[i] + '</li>';
+
   }
+  var ul = '<ul>' + li + '</ul>';
+
+  return ul;
  }
 
 /* Step 26
@@ -406,11 +407,6 @@ var gender = {
  *
  */
 
- function favoritePlanet(planet){
-  if(planets.indexOf(planet) === -1){
-    return "/" +planet + "is not a planet!/";
-  }
- }
 
 
 /* Step 27
