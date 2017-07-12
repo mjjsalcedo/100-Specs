@@ -518,6 +518,14 @@
  *
  */
 
+ function Pen(color){
+  this.color = color;
+
+ }
+
+ Pen.prototype.write = function(message){
+  return this.color + ": " + message;
+ };
 
 /* Step 31
  *
@@ -546,6 +554,23 @@
  *
  */
 
+ function Garden(plantsTotal){
+  this.plantsTotal = plantsTotal;
+  this.isWatered = false;
+ }
+
+ Garden.prototype.water = function(){
+  this.isWatered = true;
+  return this.isWatered;
+ };
+
+ Garden.prototype.grow = function(){
+  if (this.isWatered === false){
+    return false;
+  } else {
+    this.plantsTotal++;
+  }
+ };
 
 /* Step 32
  *
