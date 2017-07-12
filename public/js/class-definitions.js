@@ -309,7 +309,12 @@ var gender = {
  * @return {Bool}
  *
  */
-
+ function installLinux(type){
+  if (linuxFlavors.indexOf(type) === -1){
+    return false;
+  } else {
+    return true;}
+ }
 
 /* Step 23
  *
