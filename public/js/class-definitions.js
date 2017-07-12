@@ -4,7 +4,7 @@
  * then set it's value to null;
  *
  */
-var unicorn = null;
+ var unicorn = null;
 
 /* Step 2
  *
@@ -12,7 +12,7 @@ var unicorn = null;
  * then assign it to be the value of "Atari"
  *
  */
-var videogame_system = "Atari";
+ var videogame_system = "Atari";
 
 /* Step 3
  *
@@ -21,7 +21,7 @@ var videogame_system = "Atari";
  *
  */
 
-var sahara_animal = "The Addax";
+ var sahara_animal = "The Addax";
 
 /* Step 4
  *
@@ -31,7 +31,7 @@ var sahara_animal = "The Addax";
  * Capitalize the names.
  */
 
-var planets = ["Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune"];
+ var planets = ["Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune"];
 
 /* Step 5
  *
@@ -41,7 +41,7 @@ var planets = ["Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus
  *
  */
 
-var galilean_moons = ["Europa", "Ganymede", "Io", "Callisto"];
+ var galilean_moons = ["Europa", "Ganymede", "Io", "Callisto"];
 
 /* Step 6 φ
  *
@@ -49,7 +49,7 @@ var galilean_moons = ["Europa", "Ganymede", "Io", "Callisto"];
  * and assign the value of golden_ratio to 1.61803398874
  *
  */
-var golden_ratio = 1.61803398874;
+ var golden_ratio = 1.61803398874;
 
 /* Step 7
  *
@@ -57,7 +57,7 @@ var golden_ratio = 1.61803398874;
  * and assign the value of earths_water_composition to 0.71
  *
  */
-var earths_water_composition = 0.71;
+ var earths_water_composition = 0.71;
 
 /* Step 8
  *
@@ -65,7 +65,7 @@ var earths_water_composition = 0.71;
  * and assign the value of club_name to "Fight Club"
  *
  */
-var club_name = "Fight Club";
+ var club_name = "Fight Club";
 
 /* Step 9
  *
@@ -76,7 +76,7 @@ var club_name = "Fight Club";
  *   male    => "male"
  *   unknown => undefined
  */
-var gender = {
+ var gender = {
   female: "female",
   male: "male",
   unknown: undefined,
@@ -99,7 +99,7 @@ var gender = {
   money: 890,
   age: 20,
   gender: "female",
- };
+};
 
 /* Step 11
  *
@@ -117,7 +117,7 @@ var gender = {
   "laughingsquid.com": "162.159.247.97",
   "slumlordhosting.com":"198.61.179.126",
   "jsonformatter.curiousconcept.com": "104.28.5.70",
- };
+};
 
 /* Step 12
  *
@@ -139,7 +139,7 @@ var gender = {
   Firefox: "mozilla.org",
   Sleipnir: "fenrir-inc.com",
   Konqueror: "konqueror.org",
- };
+};
 
 /* Step 13
  *
@@ -166,8 +166,8 @@ var gender = {
     blue: "#1593ED",
     indigo: "#5215ED",
     violet: "#A915ED"},
-  isDouble: true,
- };
+    isDouble: true,
+  };
 
 /* Step 14
  *
@@ -214,7 +214,7 @@ var gender = {
   Alienware: 2500,
   HP: 499,
   Surface: 320,
- };
+};
 
 /* Step 17
  *
@@ -270,7 +270,7 @@ var gender = {
   Stout: ["Thick","Dark"],
   Porter: "Bitter",
   Ale: ["Light", "Golden"],
- };
+};
 
 /* Step 20
  *
@@ -282,7 +282,7 @@ var gender = {
  */
  function sahara_river(){
   return "Nile River";
- }
+}
 
 /* Step 21
  *
@@ -296,7 +296,7 @@ var gender = {
  */
  function addNumbers(num1,num2){
   return num1 + num2;
- }
+}
 
 /* Step 22
  *
@@ -314,7 +314,7 @@ var gender = {
     return false;
   } else {
     return true;}
- }
+  }
 
 /* Step 23
  *
@@ -334,16 +334,16 @@ var gender = {
  *
  */
  function drink(type){
-    if(beers[type] === undefined){
-      return false;
-    }
+  if(beers[type] === undefined){
+    return false;
+  }
 
-    if( beers[type] instanceof Array){
-      return "This " + type + " is " + beers[type][0] + " and " + beers[type][1] +".";
-    } else {
-      return "This " + type  + " is " + beers[type] + ".";
-    }
- }
+  if( beers[type] instanceof Array){
+    return "This " + type + " is " + beers[type][0] + " and " + beers[type][1] +".";
+  } else {
+    return "This " + type  + " is " + beers[type] + ".";
+  }
+}
 
 /* Step 24
  *
@@ -364,7 +364,7 @@ var gender = {
     return browsers[url];
   }
 
- }
+}
 
 /* Step 25
  *
@@ -385,7 +385,7 @@ var gender = {
   var ul = '<ul>' + li + '</ul>';
 
   return ul;
- }
+}
 
 /* Step 26
  *
@@ -406,7 +406,15 @@ var gender = {
  * @return {String}
  *
  */
+ function favoritePlanet(planet){
+  if (planets.indexOf(planet) === -1){
+    return "/" + planet + ' is not a planet!/';
+  } else {
+    return "I'm from " + planet + " but I wish I could go to " + planets[(Math.floor(Math.random() * 7))];
 
+  }
+
+}
 
 
 /* Step 27
@@ -432,6 +440,23 @@ var gender = {
  *
  */
 
+ class Person {
+  constructor(name,money,age,gender){
+    this.name = name;
+    this.money = money;
+    this.age = age;
+    this.gender = gender;
+  }
+
+  spendMoney(amount){
+    this.money -= amount;
+  }
+
+  earnMoney(amount){
+    this.money += amount;
+  }
+
+}
 
 /* Step 28
  *
@@ -1076,9 +1101,9 @@ var dinner;
  * and assign the values to each variable below.
  *
  */
-var warmBloodedAnimal;
-var coldBloodedAnimal;
-var notWarmOrColdAnimal;
+ var warmBloodedAnimal;
+ var coldBloodedAnimal;
+ var notWarmOrColdAnimal;
 
 
 /* Step 92
@@ -1087,8 +1112,8 @@ var notWarmOrColdAnimal;
  * and assign the values to each variable below.
  *
  */
-var streetDriving;
-var forwardDriving;
+ var streetDriving;
+ var forwardDriving;
 
 
  /* Step 93
@@ -1097,8 +1122,8 @@ var forwardDriving;
  * and assign the values to each variable below.
  *
  */
-var decagon;
-var polygon;
+ var decagon;
+ var polygon;
 
 
 /* Step 94
@@ -1107,8 +1132,8 @@ var polygon;
  * and assign the values to each variable below.
  *
  */
-var openAClosedBox;
-var closeAnOpenBox;
+ var openAClosedBox;
+ var closeAnOpenBox;
 
 
  /* Step 95
@@ -1117,8 +1142,8 @@ var closeAnOpenBox;
  * and assign the values to each variable below.
  *
  */
-var openAClosedDoor;
-var closeAnOpenDoor;
+ var openAClosedDoor;
+ var closeAnOpenDoor;
 
 
 /* Step 96
@@ -1127,8 +1152,8 @@ var closeAnOpenDoor;
  * and assign the values to each variable below.
  *
  */
-var redShoesSize7;
-var blackShoesSize10;
+ var redShoesSize7;
+ var blackShoesSize10;
 
 
  /* Step 97
@@ -1137,8 +1162,8 @@ var blackShoesSize10;
  * and assign the values to each variable below.
  *
  */
-var farTooTallAStory;
-var shortStory;
+ var farTooTallAStory;
+ var shortStory;
 
 
  /* Step 98
@@ -1147,8 +1172,8 @@ var shortStory;
  * and assign the values to each variable below.
  *
  */
-var kitchenLightsOn;
-var porchLightsOff;
+ var kitchenLightsOn;
+ var porchLightsOff;
 
 
  /* Step 99
@@ -1157,8 +1182,8 @@ var porchLightsOff;
  * and assign the values to each variable below.
  *
  */
-var cookieMonsterPwns;
-var cookieMonsterBlocked;
+ var cookieMonsterPwns;
+ var cookieMonsterBlocked;
 
 
  /* Step 100
@@ -1167,5 +1192,5 @@ var cookieMonsterBlocked;
  * and assign the values to each variable below.
  *
  */
-var badForYou;
-var goodForYou;
+ var badForYou;
+ var goodForYou;
