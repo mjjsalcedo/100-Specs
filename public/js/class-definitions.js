@@ -244,7 +244,7 @@ var gender = {
  * "cvs"
  *
  */
-
+ var scmList = ['git','svn','mercurial','bazaar','cvs'];
 
 /* Step 19
  *
