@@ -440,23 +440,22 @@
  *
  */
 
- class Person {
-  constructor(name,money,age,gender){
+ function Person (name, money, age, gender){
     this.name = name;
     this.money = money;
     this.age = age;
     this.gender = gender;
   }
 
-  spendMoney(amount){
+  Person.prototype.spendMoney = function(amount){
     this.money -= amount;
-  }
+  };
 
-  earnMoney(amount){
+  Person.prototype.earnMoney = function(amount){
     this.money += amount;
-  }
+  };
 
-}
+
 
 /* Step 28
  *
@@ -588,7 +587,17 @@
  *   removePlanet
  *
  */
+ function SolarSystem(planets){
+   this.planets = [];
+ }
 
+ SolarSystem.prototype.addPlanet = function(planets){
+   this.planets.push(planets);
+ };
+
+ SolarSystem.prototype.removePlanet = function(planets){
+   this.planets.splice(planets, 1);
+ };
 
 /* Step 33
  *
@@ -623,6 +632,34 @@
  *
  */
 
+ function PrincessLeia (name, money, age, gender){
+  Person.call(this, name, money, age, gender);
+  this.isInTrouble = null;
+ };
+
+ PrincessLeia.prototype = Object.create(Person.prototype);
+
+ PrincessLeia.prototype.shootsGun = function(){
+  this.isInTrouble = false;
+  return "Leia shoots her gun wildly";
+ };
+
+ PrincessLeia.prototype.getsInTrouble = function(){
+  this.isInTrouble = true;
+  return "Help me Obi-wan Kenobi, you're my only hope";
+ };
+
+ PrincessLeia.prototype.marries = function(husband){
+  if(husband === "Luke Skywalker"){
+    return "Gross!";
+  }
+
+  if(husband === "Han Solo"){
+    return true;
+  } else{
+    return false;
+  }
+ };
 
 /* Step 34
  *
