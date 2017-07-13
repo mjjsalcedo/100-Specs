@@ -1056,7 +1056,11 @@
  * House class
  * @param {number} stories How many stories tall the house is
  */
-
+ class House{
+  constructor(stories){
+    this.stories = stories;
+  }
+ }
 
 /**
  * Step 57
@@ -1064,7 +1068,11 @@
  * Lightbulb class
  * @param {boolean} isOn Whether the light is on or off
  */
-
+ class Lightbulb{
+  constructor(){
+    this.isOn = null;
+  }
+ }
 
 /**
  * Step 58
@@ -1072,7 +1080,11 @@
  * Cookie class
  * @param {string} flavor The cookie's flavor
  */
-
+ class Cookie{
+  constructor(flavor){
+    this.flavor = flavor;
+  }
+ }
 
 /**
  * Step 59
@@ -1080,7 +1092,11 @@
  * Meal class
  * @param {Array} foods All the foods in the meal
  */
-
+ class Meal{
+  constructor(foods){
+    this.foods = foods;
+  }
+ }
 
 /**
  * Create a new instance of the Classes you defined above, below!
