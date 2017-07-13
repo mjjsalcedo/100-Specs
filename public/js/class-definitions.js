@@ -790,7 +790,14 @@
  *   rob
  *
  */
+/* function BankAccount(balance,owner){
+  this.balance = balance;
+  this.owner = owner;
+ }
 
+ BankAccount.prototype.withdraw = function(){
+
+ }*/
 
 /* Step 37
  *
@@ -963,7 +970,12 @@
  * @param {string} species The animal species
  * @param {string} gender  male or female
  */
-
+ class Animal{
+  constructor(species, gender){
+    this.species = species;
+    this.gender = gender;
+  }
+ }
 
 /**
  * Step 51
@@ -972,7 +984,12 @@
  * @param {string} make The vehicle's make
  * @param {string} model The vehicle's model
  */
-
+ class Vehicle{
+  constructor(make, model){
+    this.make = make;
+    this.model = model;
+  }
+ }
 
 /**
  * Step 52
