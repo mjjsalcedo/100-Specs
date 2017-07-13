@@ -1,3 +1,4 @@
+/*jshint esversion: 6 */
 /* Step 1
  *
  * Declare a variable named "unicorn"
@@ -440,20 +441,23 @@
  *
  */
 
- function Person (name, money, age, gender){
+ class Person {
+  constructor (name, money, age, gender) {
     this.name = name;
     this.money = money;
     this.age = age;
     this.gender = gender;
   }
-
-  Person.prototype.spendMoney = function(amount){
+  spendMoney (amount){
     this.money -= amount;
-  };
+  }
 
-  Person.prototype.earnMoney = function(amount){
+  earnMoney(amount){
     this.money += amount;
-  };
+  }
+ }
+
+
 
 
 
@@ -632,12 +636,15 @@
  *
  */
 
+ PrincessLeia.prototype = Object.create(Person.prototype);
+
  function PrincessLeia (name, money, age, gender){
-  Person.call(this, name, money, age, gender);
+  this.name = name;
+  this.money = money;
+  this.age = age;
+  this.gender = gender;
   this.isInTrouble = null;
  };
-
- PrincessLeia.prototype = Object.create(Person.prototype);
 
  PrincessLeia.prototype.shootsGun = function(){
   this.isInTrouble = false;
@@ -730,7 +737,38 @@
  *   addDiscovery
  *
  */
+ Scientist.prototype = Object.create(Person.prototype);
 
+ function Scientist (name, money, age, gender){
+  this.name = name;
+  this.money = money;
+  this.age = age;
+  this.gender = gender;
+  this.disciplines = [];
+  this.discoveries = [];
+ };
+
+ Scientist.prototype.addDiscipline = function(discipline){
+  this.disciplines.push(discipline);
+  return this.disciplines;
+ };
+
+ Scientist.prototype.checkDiscipline = function(discipline){
+  if(this.disciplines.indexOf(discipline) === -1){
+    return false;
+  }else{
+    return true;
+  }
+ };
+
+  Scientist.prototype.addDiscovery = function(discovery){
+  this.discoveries.push(discovery);
+  var list;
+  for (var i = 0; i < this.discoveries.length; i++) {
+    list += this.discoveries[i];
+  }
+  return "I discovered " + list + ".";
+ };
 
 /* Step 36
  *
